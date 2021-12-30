@@ -1,5 +1,5 @@
 # ExcelLockConditionalRange
-**Prevent unwanted changes in conditional formatting, during editing current sheet.**
+**Prevent fragmentation in conditional formatting, during editing current sheet.**
 
 This script keeps current worksheet's conditional formattings' ranges the same as specified first time. Also when pasting new rules into worksheet, it detects and removes duplicate rules.
 
