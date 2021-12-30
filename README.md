@@ -7,7 +7,7 @@ This script keeps current worksheet's conditional formattings' ranges the same a
 
 
 ## How to use
-1. Copy script and paste it to intended worksheet's code
+1. Open `ExcelLockConditionalRange.bas` file, copy script and paste it into intended worksheet's VBA code
 
 2. (Optional) Change range and other settings in pasted script's first lines  
    (Range must be entered absolute, similar to the formula entered in Rules Manager window.)
