@@ -97,7 +97,7 @@ Private Sub checkSheet(Optional hardCheck As Boolean = False)
             If .FormatConditions.Count > 0 Then
                 Dim i As Integer
                 
-                '=== Set range of emaining rules to defined one
+                '=== Set range of rules to the defined range
                 For i = 1 To .FormatConditions.Count
                     If .FormatConditions(i).AppliesTo.Address <> applyToRange Then
                         .FormatConditions(i).ModifyAppliesToRange (ActiveSheet.Range(applyToRange))
