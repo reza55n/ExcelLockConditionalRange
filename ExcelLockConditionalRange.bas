@@ -163,7 +163,7 @@ Private Function cmpConditions(ByRef c1 As Object, ByRef c2 As Object)
            (c2.Type = xlTextString Or c2.Type = xlExpression Or c2.Type = xlTimePeriod Or _
             c2.Type = xlErrorsCondition Or c2.Type = xlNoErrorsCondition Or _
             c2.Type = xlBlanksCondition Or c2.Type = xlNoBlanksCondition) Then
-        If c1.Formula1 = c2.Formula1 Then
+        If c1.Formula1 = c2.Formula1 And c1.StopIfTrue = c2.StopIfTrue And c1.PTCondition = c2.PTCondition Then
             areSame = True
         End If
 
