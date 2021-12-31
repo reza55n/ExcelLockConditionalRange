@@ -14,7 +14,9 @@ This script keeps current worksheet's conditional formattings' ranges the same a
 3. (Optional) Change range and other settings in pasted script's first lines  
    (Range must be entered absolute, similar to the formula entered in Rules Manager window. Some examples in the script.)
 
-4. Run `Conditional_ToggleLock()`
+4. Press `Alt+F8` (`Fn+F8` on Mac) to open Macro dialog box
+
+5. Select `[YourSheet].Conditional_ToggleLock` and click Run
 
 
 ## Known issues
