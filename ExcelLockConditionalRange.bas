@@ -1,12 +1,17 @@
 Option Explicit
 Option Base 1
 
-'======= Settings =========
+'========== Settings ============
 Const applyToRange = "$1:$1048576"
   'Must be entered absolute, similar to the formula entered in Rules Manager window.
+  'Examples:
+  '  $D:$D (Single column)
+  '  $B:$E (Multiple columns)
+  '  $C$2:$E$12 (Range)
+  '  $3:$6 (Multiple rows)
 Const changeSheetTabColor = True
 Const promptRemoveDuplicates = False
-'==========================
+'================================
 
 '0: Not set, receive from Worksheet
 '1: Locked
