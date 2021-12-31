@@ -116,7 +116,7 @@ Private Sub checkSheet(Optional hardCheck As Boolean = False)
                     Dim j As Integer, totalDupes As Integer
                     
                     totalDupes = 0
-                    'For loop doesn't refresh its condition.
+                ' "For" loop doesn't refresh its condition.
                     i = 1
                     Do While i < .FormatConditions.Count
                         j = i + 1
