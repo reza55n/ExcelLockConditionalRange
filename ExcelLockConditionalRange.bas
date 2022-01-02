@@ -22,7 +22,7 @@ Dim locked As Byte
 Const sheetCondStateName = "SheetsConditionalLockState"
 Const sheetCondStateNamePass = "3414"
 
-Dim prevConditionalsCount As Integer
+Dim prevConditionalsCount As Integer, haltRefresh As Boolean
 
 ' stackoverflow.com/questions/6688131
 Function sheetExist(sSheet As String) As Boolean
@@ -50,6 +50,7 @@ Private Sub updateSheetLockState()
                 locked = match.Cells(1, 2)
             End If
         Else
+            haltRefresh = True
             Set wsh = ThisWorkbook.Sheets.Add
             wsh.Visible = xlSheetVeryHidden
             wsh.Name = sheetCondStateName
@@ -57,6 +58,7 @@ Private Sub updateSheetLockState()
             wsh.Cells(1, 2) = 2 'Default - Not locked
             locked = wsh.Cells(1, 2)
             wsh.Protect (sheetCondStateNamePass)
+            haltRefresh = False
         End If
     End If
 End Sub
@@ -254,6 +256,10 @@ Sub Conditional_Refresh()
 End Sub
 
 Private Sub cRefresh(Optional hardRefresh As Boolean = False)
+    If haltRefresh Then
+        Exit Sub
+    End If
+    
     updateSheetLockState
     
     If hardRefresh And locked = 2 Then
